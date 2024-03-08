@@ -4,8 +4,11 @@ plugins {
     id 'net.neoforged.gradle.userdev' version '7.0.81'
     id 'java-library'
 }
+
+version = "${mod_version}+${neoforge_minecraft_versions}"
+
 base {
-    archivesName = "${mod_id}-neoforge-${neoforge_minecraft_versions}"
+    archivesName = "${mod_id}-neoforge"
 }
 
 // Automatically enable neoforge AccessTransformers if the file exists

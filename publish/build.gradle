@@ -32,8 +32,8 @@ publishMods {
 
     curseforge("curseforgeFabric") {
         file = project(":fabric").remapJar.archiveFile
-        displayName = "v${rootProject.version} (Fabric ${minecraft_version})"
-        version = "${rootProject.version}-fabric"
+        displayName = "v${mod_version} (Fabric ${fabric_minecraft_versions})"
+        version = "${mod_version}-fabric"
 
         accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
         projectId = curseForgeProjectId
@@ -47,8 +47,8 @@ publishMods {
 
     modrinth("modrinthFabric") {
         file = project(":fabric").remapJar.archiveFile
-        displayName = "v${rootProject.version} (Fabric ${minecraft_version})"
-        version = "${rootProject.version}-fabric"
+        displayName = "v${mod_version} (Fabric ${fabric_minecraft_versions})"
+        version = "${mod_version}-fabric"
 
         accessToken = providers.environmentVariable("MODRINTH_TOKEN")
         projectId = modrinthProjectId
@@ -62,8 +62,8 @@ publishMods {
 
     curseforge("curseforgeNeoforge") {
         file = project(":neoforge").jar.archiveFile
-        displayName = "v${rootProject.version} (NeoForge ${minecraft_version})"
-        version = "${rootProject.version}-neoforge"
+        displayName = "v${mod_version} (NeoForge ${neoforge_minecraft_versions})"
+        version = "${mod_version}-neoforge"
 
         accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
         projectId = curseForgeProjectId
@@ -73,8 +73,8 @@ publishMods {
 
     modrinth("modrinthNeoforge") {
         file = project(":neoforge").jar.archiveFile
-        displayName = "v${rootProject.version} (NeoForge ${minecraft_version})"
-        version = "${rootProject.version}-neoforge"
+        displayName = "v${mod_version} (NeoForge ${neoforge_minecraft_versions})"
+        version = "${mod_version}-neoforge"
 
         accessToken = providers.environmentVariable("MODRINTH_TOKEN")
         projectId = modrinthProjectId

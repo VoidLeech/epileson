@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "epileson:epileson_helmet",
+    "epileson:epileson_chestplate",
+    "epileson:epileson_leggings",
+    "epileson:epileson_boots"
+  ]
+}

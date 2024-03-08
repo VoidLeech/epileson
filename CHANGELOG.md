@@ -1,1 +1,1 @@
-- Initial release for 1.20.4
+- Initial release for 1.20.x Fabric and 1.20.4 NeoForge.

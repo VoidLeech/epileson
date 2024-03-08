@@ -1,28 +1,32 @@
 plugins {
-    id "me.modmuss50.mod-publish-plugin" version "0.4.5"
+    id "me.modmuss50.mod-publish-plugin" version "0.5.1"
 }
 
 evaluationDependsOn(":common")
 evaluationDependsOn(":fabric")
 evaluationDependsOn(":neoforge")
 
-Spec<Task> publishTask = { Task it -> it.name.startsWith("publish") } as Spec<Task>
-
-tasks.matching(publishTask).configureEach {
-    it.dependsOn(project(":neoforge").tasks.named("jarJar"))
-}
-
 publishMods {
     changelog = rootProject.file("CHANGELOG.md").text
     type = STABLE
 
-    def forgeLoaders = [
+    def curseForgeProjectId = "984325"
+    def modrinthProjectId = "qbzGjA1u"
+
+    def neoForgeLoaders = [
             "neoforge"
     ]
     def fabricLoaders = [
             "fabric"
     ]
-    def mcVersions = [
+    def neoForgeMCVersions = [
+            "1.20.4"
+    ]
+    def fabricMCVersions = [
+            "1.20",
+            "1.20.1",
+            "1.20.2",
+            "1.20.3",
             "1.20.4"
     ]
 
@@ -32,15 +36,12 @@ publishMods {
         version = "${rootProject.version}-fabric"
 
         accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
-        projectId = "956678"
+        projectId = curseForgeProjectId
         modLoaders.addAll(fabricLoaders)
-        minecraftVersions.addAll(mcVersions)
+        minecraftVersions.addAll(fabricMCVersions)
 
         requires {
             slug = "fabric-api"
-        }
-        embeds {
-            slug = "smartbrainlib"
         }
     }
 
@@ -50,15 +51,12 @@ publishMods {
         version = "${rootProject.version}-fabric"
 
         accessToken = providers.environmentVariable("MODRINTH_TOKEN")
-        projectId = "9pGITjpO"
+        projectId = modrinthProjectId
         modLoaders.addAll(fabricLoaders)
-        minecraftVersions.addAll(mcVersions)
+        minecraftVersions.addAll(fabricMCVersions)
 
         requires {
             slug = "fabric-api"
-        }
-        embeds {
-            slug = "smartbrainlib"
         }
     }
 
@@ -68,12 +66,9 @@ publishMods {
         version = "${rootProject.version}-neoforge"
 
         accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
-        projectId = "956678"
-        modLoaders.addAll(forgeLoaders)
-        minecraftVersions.addAll(mcVersions)
-        embeds {
-            slug = "smartbrainlib"
-        }
+        projectId = curseForgeProjectId
+        modLoaders.addAll(neoForgeLoaders)
+        minecraftVersions.addAll(neoForgeMCVersions)
     }
 
     modrinth("modrinthNeoforge") {
@@ -82,22 +77,19 @@ publishMods {
         version = "${rootProject.version}-neoforge"
 
         accessToken = providers.environmentVariable("MODRINTH_TOKEN")
-        projectId = "9pGITjpO"
-        modLoaders.addAll(forgeLoaders)
-        minecraftVersions.addAll(mcVersions)
-        embeds {
-            slug = "smartbrainlib"
-        }
+        projectId = modrinthProjectId
+        modLoaders.addAll(neoForgeLoaders)
+        minecraftVersions.addAll(neoForgeMCVersions)
     }
 
     github {
-        displayName = "Rapscallions and Rockhoppers ${rootProject.version} (${minecraft_version})"
+        displayName = "Epileson ${rootProject.version} (${minecraft_version})"
         file = project(":fabric").remapJar.archiveFile
         additionalFiles.from(
                 project(":neoforge").jar.archiveFile)
 
         accessToken = providers.environmentVariable("GITHUB_TOKEN")
-        repository = "GreenhouseTeam/rapscallions-and-rockhoppers"
+        repository = "MerchantPug/epileson"
         commitish = github_committish // This is the branch the release tag will be created from
         tagName = "${rootProject.version}"
     }

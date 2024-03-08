@@ -12,5 +12,10 @@
   "item.epileson.smithing_template.epileson_upgrade.ingredients": "Epileson Sheet",
   "upgrade.epileson.epileson_upgrade": "Epileson Upgrade",
 
-  "subtitles.epileson.item.armor.equip_epileson": "Epileson armor jingles"
+  "subtitles.epileson.item.armor.equip_epileson": "Epileson armor jingles",
+
+  "advancements.epileson.end.obtain_epileson_sheet.title": "It's Not Sheet Metal",
+  "advancements.epileson.end.obtain_epileson_sheet.description": "Obtain an Epileson Sheet",
+  "advancements.epileson.end.epileson_armor.title": "Stuffed Chains",
+  "advancements.epileson.end.epileson_armor.description": "Get a full suit of Epileson armor"
 }

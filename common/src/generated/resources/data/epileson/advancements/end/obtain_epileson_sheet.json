@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:end/find_end_city",
+  "criteria": {
+    "epileson_sheet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "epileson:epileson_sheet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.epileson.end.obtain_epileson_sheet.description"
+    },
+    "icon": {
+      "item": "epileson:epileson_sheet"
+    },
+    "title": {
+      "translate": "advancements.epileson.end.obtain_epileson_sheet.title"
+    }
+  },
+  "requirements": [
+    [
+      "epileson_sheet"
+    ]
+  ]
+}

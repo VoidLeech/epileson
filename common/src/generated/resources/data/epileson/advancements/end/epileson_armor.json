@@ -1,0 +1,50 @@
+{
+  "parent": "epileson:end/obtain_epileson_sheet",
+  "criteria": {
+    "epileson_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "epileson:epileson_helmet"
+            ]
+          },
+          {
+            "items": [
+              "epileson:epileson_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "epileson:epileson_leggings"
+            ]
+          },
+          {
+            "items": [
+              "epileson:epileson_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.epileson.end.epileson_armor.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "item": "epileson:epileson_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancements.epileson.end.epileson_armor.title"
+    }
+  },
+  "requirements": [
+    [
+      "epileson_armor"
+    ]
+  ]
+}

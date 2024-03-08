@@ -15,7 +15,7 @@ public class EpilesonArmorMaterials {
                 case LEGGINGS -> 15;
                 case BOOTS -> 13;
             };
-            return multiplier * 18;
+            return multiplier * 22;
         }
 
         @Override

@@ -1,0 +1,15 @@
+{
+  "item.epileson.epileson_helmet": "Epileson Helmet",
+  "item.epileson.epileson_chestplate": "Epileson Chestplate",
+  "item.epileson.epileson_leggings": "Epileson Leggings",
+  "item.epileson.epileson_boots": "Epileson Boots",
+
+  "item.epileson.epileson_upgrade_smithing_template": "Smithing Template",
+  "item.epileson.smithing_template.epileson_upgrade.additions_slot_description": "Add Epileson Cloth",
+  "item.epileson.smithing_template.epileson_upgrade.applies_to": "Chainmail Armor",
+  "item.epileson.smithing_template.epileson_upgrade.base_slot_description": "Add chainmail armor",
+  "item.epileson.smithing_template.epileson_upgrade.ingredients": "Epileson Cloth",
+  "upgrade.epileson.epileson_upgrade": "Epileson Upgrade",
+
+  "subtitles.epileson.item.armor.equip_epileson": "Epileson armor jingles"
+}

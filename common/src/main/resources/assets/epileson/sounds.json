@@ -1,0 +1,43 @@
+{
+  "item.armor.equip_epileson": {
+    "sounds": [
+      {
+        "name": "epileson:item/armor/equip_epileson1",
+        "volume": 0.8
+      },
+      {
+        "name": "epileson:item/armor/equip_epileson1",
+        "pitch": 0.9,
+        "volume": 0.8
+      },
+      {
+        "name": "epileson:item/armor/equip_epileson2",
+        "volume": 0.8
+      },
+      {
+        "name": "epileson:item/armor/equip_epileson2",
+        "pitch": 0.9,
+        "volume": 0.8
+      },
+      {
+        "name": "epileson:item/armor/equip_epileson3",
+        "volume": 0.8
+      },
+      {
+        "name": "epileson:item/armor/equip_epileson3",
+        "pitch": 0.9,
+        "volume": 0.8
+      },
+      {
+        "name": "epileson:item/armor/equip_epileson4",
+        "volume": 0.8
+      },
+      {
+        "name": "epileson:item/armor/equip_epileson4",
+        "pitch": 0.9,
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.epileson.item.armor.equip_epileson"
+  }
+}

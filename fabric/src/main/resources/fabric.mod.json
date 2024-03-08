@@ -18,6 +18,9 @@
     "entrypoints": {
         "main": [
             "net.merchantpug.epileson.EpilesonFabric"
+        ],
+        "fabric-datagen": [
+            "net.merchantpug.epileson.datagen.EpilesonDataGen"
         ]
     },
     "mixins": [

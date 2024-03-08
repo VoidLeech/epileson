@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "epileson:epileson_sheet"
+  },
+  "base": {
+    "item": "minecraft:chainmail_boots"
+  },
+  "result": {
+    "item": "epileson:epileson_boots"
+  },
+  "template": {
+    "item": "epileson:epileson_upgrade_smithing_template"
+  }
+}

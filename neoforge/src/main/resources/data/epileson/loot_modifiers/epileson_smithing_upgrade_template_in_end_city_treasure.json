@@ -1,0 +1,27 @@
+{
+  "type": "epileson:add_pools",
+  "conditions": [
+    {
+      "condition": "epileson:is_specific_loot_table",
+      "loot_tables": [
+        "minecraft:chests/end_city_treasure"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "epileson:epileson_upgrade_smithing_template"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

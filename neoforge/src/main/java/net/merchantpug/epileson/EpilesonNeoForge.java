@@ -1,20 +1,25 @@
 package net.merchantpug.epileson;
 
+import net.merchantpug.epileson.loot.AddPoolLootModifier;
+import net.merchantpug.epileson.loot.IsSpecificLootTableCondition;
 import net.merchantpug.epileson.registry.EpilesonItems;
 import net.merchantpug.epileson.registry.EpilesonSoundEvents;
 import net.merchantpug.epileson.registry.EpilesonTags;
 import net.merchantpug.epileson.registry.internal.RegistrationFunction;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.RegisterEvent;
 
 import java.util.List;
@@ -35,6 +40,10 @@ public class EpilesonNeoForge {
                 register(event, EpilesonItems::registerItems);
             } else if (event.getRegistryKey() == Registries.SOUND_EVENT) {
                 register(event, EpilesonSoundEvents::registerSoundEvents);
+            } else if (event.getRegistryKey() == Registries.LOOT_CONDITION_TYPE) {
+                event.register(Registries.LOOT_CONDITION_TYPE, IsSpecificLootTableCondition.ID, () -> new LootItemConditionType(IsSpecificLootTableCondition.CODEC));
+            } else if (event.getRegistryKey() == NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS) {
+                event.register(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, AddPoolLootModifier.ID, () -> AddPoolLootModifier.CODEC);
             }
         }
 

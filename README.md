@@ -9,10 +9,7 @@ The mod is designed for Origins, to give something in place of Elytra for Origin
 ![](https://img.merchantpug.net/u/UlqwPq.png)
 
 ## Downloads
-The mod is available for:
-- Fabric/Quilt
-- Forge (1.20.1)
-- NeoForge (1.20.4 and above)
+The mod is available on either [CurseForge](https://legacy.curseforge.com/minecraft/mc-mods/epileson) or [Modrinth](https://modrinth.com/project/epileson)
 
 ## Credits
 - Omniv for making the textures.

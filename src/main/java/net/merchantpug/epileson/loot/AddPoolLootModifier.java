@@ -23,7 +23,7 @@ public class AddPoolLootModifier extends LootModifier {
     private static final LootPool pool = LootPool.lootPool()
             .setRolls(ConstantValue.exactly(1.0F))
             .add(EmptyLootItem.emptyItem().setWeight(2))
-            .add(LootItem.lootTableItem(EpilesonItems.EPILESON_UPGRADE_SMITHING_TEMPLATE).setWeight(1))
+            .add(LootItem.lootTableItem(EpilesonItems.EPILESON_UPGRADE_SMITHING_TEMPLATE.get()).setWeight(1))
             .build();
 
     protected AddPoolLootModifier(LootItemCondition[] conditionsIn) {

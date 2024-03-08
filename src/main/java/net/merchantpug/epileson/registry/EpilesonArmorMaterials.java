@@ -35,12 +35,12 @@ public class EpilesonArmorMaterials {
 
         @Override
         public SoundEvent getEquipSound() {
-            return EpilesonSoundEvents.ARMOR_EQUIP_EPILESON;
+            return EpilesonSoundEvents.ARMOR_EQUIP_EPILESON.get();
         }
 
         @Override
         public Ingredient getRepairIngredient() {
-            return Ingredient.of(EpilesonItems.EPILESON_SHEET);
+            return Ingredient.of(EpilesonItems.EPILESON_SHEET.get());
         }
 
         @Override

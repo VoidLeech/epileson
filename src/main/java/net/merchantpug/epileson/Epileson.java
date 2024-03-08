@@ -1,31 +1,25 @@
 package net.merchantpug.epileson;
 
-import net.merchantpug.epileson.loot.AddPoolLootModifier;
-import net.merchantpug.epileson.loot.IsSpecificLootTableCondition;
 import net.merchantpug.epileson.registry.EpilesonItems;
 import net.merchantpug.epileson.registry.EpilesonSoundEvents;
 import net.merchantpug.epileson.registry.EpilesonTags;
-import net.merchantpug.epileson.registry.internal.RegistrationFunction;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegisterEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 
 @Mod(Epileson.MOD_ID)
 public class Epileson {
@@ -34,7 +28,11 @@ public class Epileson {
     public static final String MOD_NAME = "Epileson";
     public static final Logger LOG = LoggerFactory.getLogger(MOD_NAME);
 
-    public Epileson() {}
+    public Epileson() {
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        EpilesonItems.registerItems(eventBus);
+        EpilesonSoundEvents.registerSoundEvents(eventBus);
+    }
 
 
     public static ResourceLocation asResource(String path) {
@@ -53,22 +51,6 @@ public class Epileson {
 
     @Mod.EventBusSubscriber(modid = Epileson.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ModEvents {
-        @SubscribeEvent
-        public static void registerContent(RegisterEvent event) {
-            if (event.getRegistryKey() == Registries.ITEM) {
-                register(event, EpilesonItems::registerItems);
-            } else if (event.getRegistryKey() == Registries.SOUND_EVENT) {
-                register(event, EpilesonSoundEvents::registerSoundEvents);
-            } else if (event.getRegistryKey() == Registries.LOOT_CONDITION_TYPE) {
-                event.register(Registries.LOOT_CONDITION_TYPE, IsSpecificLootTableCondition.ID, () -> new LootItemConditionType(new IsSpecificLootTableCondition.Serializer()));
-            } else if (event.getRegistryKey() == ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS) {
-                event.register(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, AddPoolLootModifier.ID, () -> AddPoolLootModifier.CODEC);
-            }
-        }
-
-        private static <T> void register(RegisterEvent event, Consumer<RegistrationFunction<T>> consumer) {
-            consumer.accept((registry, id, value) -> event.register(registry.key(), id, () -> value));
-        }
 
         @SubscribeEvent
         public static void onCreativeModeTabBuild(BuildCreativeModeTabContentsEvent event) {

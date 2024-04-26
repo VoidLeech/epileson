@@ -1,6 +1,7 @@
 package net.merchantpug.epileson;
 
 import net.merchantpug.epileson.registry.EpilesonItems;
+import net.merchantpug.epileson.registry.EpilesonLootModifiers;
 import net.merchantpug.epileson.registry.EpilesonSoundEvents;
 import net.merchantpug.epileson.registry.EpilesonTags;
 import net.minecraft.resources.ResourceLocation;
@@ -32,6 +33,7 @@ public class Epileson {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         EpilesonItems.registerItems(eventBus);
         EpilesonSoundEvents.registerSoundEvents(eventBus);
+        EpilesonLootModifiers.registerLootModifiers(eventBus);
     }
 
 

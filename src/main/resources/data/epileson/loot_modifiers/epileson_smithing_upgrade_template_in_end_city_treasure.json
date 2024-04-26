@@ -2,10 +2,8 @@
   "type": "epileson:add_epileson_upgrade_smithing_template",
   "conditions": [
     {
-      "condition": "epileson:is_specific_loot_table",
-      "loot_tables": [
-        "minecraft:chests/end_city_treasure"
-      ]
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/end_city_treasure"
     }
   ],
   "entries": [
